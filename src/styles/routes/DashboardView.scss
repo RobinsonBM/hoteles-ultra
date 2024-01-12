@@ -1,0 +1,64 @@
+@import '../variables';
+
+$primary-color: #007bff;
+$background-color: #f4f4f4;
+$text-color: #333;
+$shadow-color: rgba(0, 0, 0, 0.1);
+
+.sidebar {
+    padding: 20px 0;
+    background-color: $color-300;
+    height: 100vh;
+    width: 20%;
+    position: fixed;
+
+    button {
+        width: 100%;
+        padding: 10px 0;
+        background-color: transparent;
+        color: white;
+        border: none;
+        font-size: 1.1rem;
+        transition: background-color 0.3s, color 0.3s;
+        margin: 0px;
+
+        &:hover {
+            background-color: $color-500;
+            color: #fff;
+            width: 100%;
+        }
+    }
+}
+
+.content {
+    width: 80%;
+    margin-left: 20%;
+
+}
+
+.dashboard {
+    background-color: $background-color;
+    padding: 20px;
+}
+
+header {
+    text-align: center;
+    padding: 10px 0;
+}
+
+h1 {
+    margin: 0;
+}
+
+.feature {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px $shadow-color;
+    margin-bottom: 20px;
+    padding: 20px;
+}
+
+h2 {
+    color: $text-color;
+    margin-bottom: 15px;
+}
