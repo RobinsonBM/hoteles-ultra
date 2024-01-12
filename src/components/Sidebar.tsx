@@ -1,4 +1,4 @@
-import { ButtonSidebar } from '../components/ButtonSidebar';
+import { ButtonSidebar } from './share/ButtonSidebar';
 
 export const Sidebar = () => {
     return (

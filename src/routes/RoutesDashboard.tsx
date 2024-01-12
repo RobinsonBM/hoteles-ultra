@@ -1,6 +1,6 @@
 import { Route, Routes } from 'react-router-dom';
 import { DashboardView } from './DashboardView';
-import { Sidebar } from './Sidebar';
+import { Sidebar } from '../components/Sidebar';
 
 export const RoutesDashboard = () => {
     return (
