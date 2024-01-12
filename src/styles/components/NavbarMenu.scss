@@ -1,0 +1,19 @@
+@import '../variables';
+
+.navbar {
+    background-color: white !important;
+    border-bottom: 1px solid $color-100;
+
+    .container {
+        .navbar-brand {
+            img {
+                height: 40px;
+            }
+        }
+    }
+
+    .login {
+        text-decoration: none;
+        color: $color-950;
+    }
+}

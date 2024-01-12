@@ -1,14 +1,19 @@
-// import { useState } from 'react';
-// import reactLogo from './assets/react.svg';
-// import viteLogo from '/vite.svg';
+import { BannerHome } from './components/BannerHome';
+import { NavbarMenu } from './components/NavbarMenu';
+import { SearchFilters } from './components/SearchFilters';
 import './styles/App.scss';
 
 function App() {
-    // const [count, setCount] = useState(0);
-
     return (
         <>
-            <h1>Inicio</h1>
+            <NavbarMenu />
+            <div className='container'>
+                <SearchFilters />
+                <div className='search-home'>
+                    <button className='btn btn-secondary mt-3'>Buscar</button>
+                </div>
+                <BannerHome />
+            </div>
         </>
     );
 }

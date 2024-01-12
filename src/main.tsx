@@ -1,4 +1,4 @@
-// import App from './App.tsx';
+import App from './App.tsx';
 import './mocks/mirage/config.js';
 import './styles/index.scss';
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -14,8 +14,8 @@ import ReactDOM from 'react-dom/client';
 ReactDOM.createRoot(document.getElementById('root')!).render(
     <BrowserRouter>
         <Routes>
-            {/* <Route path='/' element={<App />} /> */}
-            <Route path='/' element={<Login />} />
+            <Route path='/' element={<App />} />
+            <Route path='admin' element={<Login />} />
             <Route path='dashboard' element={<RoutesDashboard />} />
             <Route path='dashboard/profile' element={<EditProfileView />} />
             <Route path='logout' element={<Logout />} />
