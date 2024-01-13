@@ -4,7 +4,7 @@ import { Filters } from './share/Filters';
 export const SearchFilters = () => {
     return (
         <>
-            <h2 className='mt-4'>¿A donde vas?</h2>
+            <h2 className='mt-4 text-center'>¿Buscas un Hotel?</h2>
             <Row>
                 <Col md={3} sm={6}>
                     <Filters label={'Fecha de Entrada'} name={'startDate'} type={'date'} />

@@ -4,7 +4,8 @@ import { faCalendar, faMoon, faTag } from '@fortawesome/free-solid-svg-icons';
 
 export const BannerHome = () => {
     return (
-        <div className='banner-home mt-5'>
+        <div className='banner-home mt-4'>
+            <div className='banner-opacity'></div>
             <div className='banner-title'>
                 <h2>Busca y reserva tu lugar favorito</h2>
             </div>
