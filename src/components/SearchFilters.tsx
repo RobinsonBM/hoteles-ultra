@@ -31,6 +31,9 @@ export const SearchFilters = () => {
                     />
                 </Col>
             </Row>
+            <div className='search-home'>
+                <button className='btn btn-secondary mt-3'>Buscar</button>
+            </div>
         </>
     );
 };

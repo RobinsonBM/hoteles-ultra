@@ -9,11 +9,6 @@ export const Login = () => {
     const navigate = useNavigate();
 
     useEffect(() => {
-        fetch('/api/users')
-            .then((response) => response.json())
-            .then((data: void) => {
-                console.log('RobinDev - data:', data);
-            });
         // fetch('/api/users', {
         //     method: 'POST',
         //     headers: {

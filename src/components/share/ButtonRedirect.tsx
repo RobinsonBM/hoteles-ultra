@@ -1,11 +1,11 @@
 import { useNavigate } from 'react-router-dom';
 
-interface ButtonSidebarProps {
+interface ButtonRedirectProps {
     text: string;
     url: string;
 }
 
-export const ButtonSidebar: React.FC<ButtonSidebarProps> = ({ text, url }) => {
+export const ButtonRedirect: React.FC<ButtonRedirectProps> = ({ text, url }) => {
     const navigate = useNavigate();
     const handlerRedirect = () => {
         navigate(url);
