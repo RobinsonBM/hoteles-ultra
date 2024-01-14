@@ -1,30 +1,81 @@
-# React + TypeScript + Vite
+# Proyecto de React con Vite - Hoteles
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Este proyecto de React con Vite es una aplicación web para mostrar información sobre diferentes hoteles, incluyendo detalles sobre habitaciones, servicios, calificaciones, y más.
 
-Currently, two official plugins are available:
+## Comenzando
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Asegúrate de tener [Node.js](https://nodejs.org/) version 18x instalado en tu máquina.
 
-## Expanding the ESLint configuration
+1. Clona este repositorio:
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
-
-- Configure the top-level `parserOptions` property like this:
-
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
+```
+git clone https://github.com/RobinsonBM/hoteles-ultra.git
 ```
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+2. Navega al directorio del proyecto:
+
+```
+cd hoteles-ultra
+```
+
+3. Instala las dependencias:
+
+```
+npm install
+```
+
+4. Inicia la aplicacion
+
+```
+npm run dev
+```
+
+## Estructura del Proyecto
+
+La estructura del proyecto está organizada de la siguiente manera:
+
+```
+hoteles-ultra/
+├── env.d.ts
+├── index.html
+├── package-lock.json
+├── package.json
+├── postcss.config.js
+├── public
+|  └── hotel.svg
+├── README.md
+├── src
+|  ├── App.tsx
+|  ├── assets
+|  ├── components
+|  ├── main.tsx
+|  ├── mocks
+|  ├── routes
+|  ├── styles
+|  ├── types
+|  └── vite-env.d.ts
+├── tsconfig.json
+├── tsconfig.node.json
+└── vite.config.ts
+```
+
+## Funcionalidades Principales
+
+-   Visualizacion de Hoteles
+-   Filtrado de Hoteles
+-   Detallado de Habitaciones
+-   Adicion de nuevos Hoteles
+-   Adicion de nuevas Habitaciones
+
+## Tecnologias Utilizadas
+
+-   [React](https://react.dev/): Biblioteca de JavaScript para construir interfaces de usuario.
+-   [ViteJS](https://vitejs.dev/): Herramienta de desarrollo rápido para proyectos web con React.
+-   [Bootstrap](https://getbootstrap.com/): Framework front-end para desarrollo web rápido y responsivo.
+-   [MirageJS](https://miragejs.com/): Biblioteca para simular APIs y backend en desarrollo frontend.
+
+### Biliotecas Utilizadas
+
+-   [React Router](https://reactrouter.com/en/main): Enrutador para manejar la navegación en aplicaciones React.
+-   [Owl Carousel 2](https://owlcarousel2.github.io/OwlCarousel2/): Plugin de carrusel de imágenes para sitios web.
+-   [Font Awesome](https://fontawesome.com/): Biblioteca de iconos para diseño web y aplicaciones.
