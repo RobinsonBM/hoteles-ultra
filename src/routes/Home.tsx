@@ -1,10 +1,10 @@
 import { Route, Routes } from 'react-router-dom';
-import { BannerHome } from './components/BannerHome';
-import { HotelsCarousel } from './components/HotelsCarousel';
-import { SearchFilters } from './components/SearchFilters';
-import './styles/App.scss';
+import { BannerHome } from '../components/BannerHome';
+import { HotelsCarousel } from '../components/HotelsCarousel';
+import { SearchFilters } from '../components/SearchFilters';
+import '../styles/App.scss';
 
-function App() {
+function Home() {
     return (
         <Routes>
             <Route
@@ -23,4 +23,4 @@ function App() {
     );
 }
 
-export default App;
+export default Home;
