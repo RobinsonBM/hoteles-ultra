@@ -12,7 +12,7 @@ export const ButtonRedirect: React.FC<ButtonRedirectProps> = ({ text, url }) => 
     };
     console.log('RobinDev - text:', text);
     return (
-        <button className='my-2' onClick={handlerRedirect}>
+        <button className='btn my-2' onClick={handlerRedirect}>
             {text}
         </button>
     );
