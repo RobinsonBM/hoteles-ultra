@@ -8,7 +8,7 @@ export const NavbarMenu = () => {
             <Container>
                 <Navbar.Brand href='/'>
                     <img src='../../public/hotel.svg' alt='Icono Hoteles Ultra' />
-                    Hoteles Ultra
+                    <h1>Hoteles Ultra</h1>
                 </Navbar.Brand>
                 <Navbar.Toggle aria-controls='responsive-navbar-nav' />
                 <Navbar.Collapse id='responsive-navbar-nav'>

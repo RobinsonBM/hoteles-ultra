@@ -1,17 +1,19 @@
+import '../styles/components/HotelsCarousel.scss';
 import { ButtonRedirect } from './share/ButtonRedirect';
 import { HotelCard } from './share/HotelCard';
-import { HotelModel } from '../types/HotelModel';
 import { Loader } from './share/Loader';
 import { useEffect, useState } from 'react';
-import OwlCarousel, { OwlCarouselProps } from 'react-owl-carousel';
-import '../styles/components/HotelsCarousel.scss';
+import { useHotelsContext } from '../context/HotelsProvider';
+import OwlCarousel from 'react-owl-carousel';
+import { HotelModel } from '../types/HotelModel';
 
 export const HotelsCarousel = () => {
-    const [hotels, setHotels] = useState<HotelModel[]>([]);
-    const optionCarousel: OwlCarouselProps = {
+    const [bestHotels, setBestHotels] = useState<HotelModel[]>([]);
+    const { hotels } = useHotelsContext();
+    const optionCarousel = {
         items: 3,
         margin: 15,
-        loop: hotels.length > 3 ? true : false,
+        loop: hotels!.length > 3 ? true : false,
         autoplay: true,
         autoplayTimeout: 4000,
         dots: true,
@@ -29,26 +31,22 @@ export const HotelsCarousel = () => {
     };
 
     useEffect(() => {
-        fetch('/api/hotels')
-            .then((response) => response.json())
-            .then(({ hotels }) => {
-                const bestHotels = hotels.filter(
-                    (hotel: HotelModel) => hotel.calificaciones.puntuacion >= 4.5
-                );
-                console.log('RobinDev - bestHotels:', bestHotels);
-                setHotels(bestHotels);
-            });
-    }, []);
+        if (hotels!.length > 0) getBestHotels();
+    }, [hotels]);
 
+    const getBestHotels = () => {
+        const bestHotels = hotels!.filter((hotel) => hotel.calificaciones.puntuacion >= 4.5);
+        setBestHotels(bestHotels);
+    };
     return (
-        <div className='best-hotels my-4'>
+        <div className='best-hotels my-4' id='hoteles'>
             <h2>Descubre los mejores hoteles</h2>
-            {hotels.length === 0 ? (
+            {bestHotels.length === 0 ? (
                 <Loader />
             ) : (
                 <>
                     <OwlCarousel className='owl-theme' {...optionCarousel}>
-                        {hotels.map((hotel) => {
+                        {bestHotels.map((hotel) => {
                             return (
                                 <div className='item' key={hotel.id}>
                                     <HotelCard data={hotel} />

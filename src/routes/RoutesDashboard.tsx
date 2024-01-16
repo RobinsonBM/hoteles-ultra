@@ -1,5 +1,6 @@
 import { Route, Routes } from 'react-router-dom';
 import { DashboardView } from './DashboardView';
+import { HotelsManage } from '../components/admin/HotelsManage';
 import { Sidebar } from '../components/Sidebar';
 
 export const RoutesDashboard = () => {
@@ -11,6 +12,7 @@ export const RoutesDashboard = () => {
             <article className='content'>
                 <Routes>
                     <Route path='/' element={<DashboardView />} />
+                    <Route path='hoteles' element={<HotelsManage />} />
                 </Routes>
             </article>
         </div>
