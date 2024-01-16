@@ -5,6 +5,7 @@ export interface HotelModel {
     ubicacion: string;
     telefono: string;
     correoElectronico: string;
+    imagenes: string[];
     habitaciones: Habitacion[];
     servicios: string[];
     calificaciones: Calificaciones;

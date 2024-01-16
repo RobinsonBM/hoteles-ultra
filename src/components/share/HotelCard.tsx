@@ -1,5 +1,5 @@
-import { Carousel, CarouselProps } from 'react-bootstrap';
 import '../../styles/components/share/HotelsCardCarousel.scss';
+import { Carousel, CarouselProps } from 'react-bootstrap';
 import { HotelModel } from '../../types/HotelModel';
 import { useEffect, useState } from 'react';
 
@@ -17,7 +17,7 @@ export const HotelCard: React.FC<HotelCardProps> = ({ data }) => {
 
     useEffect(() => {
         if (DataTransferItemList) {
-            const images = data.habitaciones.map((habitacion) => habitacion.img);
+            const images = data.imagenes.map((imgHotel) => imgHotel);
             setImages(images);
         }
     }, [data]);
@@ -25,9 +25,9 @@ export const HotelCard: React.FC<HotelCardProps> = ({ data }) => {
     return (
         <div className='hotel-card'>
             <Carousel {...optionCarousel}>
-                {images.map((imagen) => {
+                {images.map((imagen, index) => {
                     return (
-                        <Carousel.Item>
+                        <Carousel.Item key={index}>
                             <img className='item' src={imagen} alt='' />
                         </Carousel.Item>
                     );
