@@ -27,7 +27,6 @@ export const Login = () => {
         // })
         //     .then((response) => response.json())
         //     .then((data) => {
-        //         console.log('Usuario creado:', data);
         //         // Puedes manejar la respuesta según tus necesidades
         //     })
         //     .catch((error) => console.error('Error al crear usuario:', error));
@@ -36,8 +35,6 @@ export const Login = () => {
     const handleSubmit = (event: any) => {
         event.preventDefault();
         navigate('/dashboard');
-        console.log('Usuario:', username);
-        console.log('Contraseña:', password);
     };
     return (
         <div className='login'>

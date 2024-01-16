@@ -17,9 +17,7 @@ export const Filters: React.FC<FiltersProps> = ({ label, type, name, placeholder
         setHuespedes(value);
     };
 
-    const handleValue = ({ target }: any) => {
-        console.log('RobinDev - target:', typeof target);
-    };
+    const handleValue = ({ target }: any) => {};
 
     return (
         <div>

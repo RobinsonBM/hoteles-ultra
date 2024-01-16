@@ -26,7 +26,6 @@ export const Footer = () => {
             <div className='footer-menu my-3'>
                 <h5>Hoteles segun destino</h5>
                 {destinies.map((destiny, index) => {
-                    console.log('RobinDev - destiny:', destiny);
                     return (
                         <Link key={index} to='/hoteles'>
                             Hoteles en {destiny}
