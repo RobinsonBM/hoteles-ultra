@@ -1,11 +1,11 @@
 import '../styles/components/HotelsCarousel.scss';
 import { ButtonRedirect } from './share/ButtonRedirect';
 import { HotelCard } from './share/HotelCard';
+import { HotelModel } from '../types/HotelModel';
 import { Loader } from './share/Loader';
 import { useEffect, useState } from 'react';
 import { useHotelsContext } from '../context/HotelsProvider';
 import OwlCarousel from 'react-owl-carousel';
-import { HotelModel } from '../types/HotelModel';
 
 export const HotelsCarousel = () => {
     const [bestHotels, setBestHotels] = useState<HotelModel[]>([]);

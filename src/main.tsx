@@ -30,7 +30,7 @@ ReactDOM.createRoot(document.getElementById('root')!).render(
                         }
                     />
                     <Route
-                        path='/'
+                        path='hoteles'
                         element={
                             <>
                                 <NavbarMenu />

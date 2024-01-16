@@ -1,4 +1,4 @@
-import '../../styles/components/share/HotelsCardCarousel.scss';
+import '../../styles/components/share/HotelsCard.scss';
 import { Carousel, CarouselProps } from 'react-bootstrap';
 import { HotelModel } from '../../types/HotelModel';
 import { useEffect, useState } from 'react';
