@@ -26,8 +26,9 @@ export const Footer = () => {
             <div className='footer-menu my-3'>
                 <h5>Hoteles segun destino</h5>
                 {destinies.map((destiny, index) => {
+                    const destinyFormat = encodeURIComponent(destiny) 
                     return (
-                        <Link key={index} to='/hoteles'>
+                        <Link key={index} to={`/hoteles/${destinyFormat}`}>
                             Hoteles en {destiny}
                         </Link>
                     );
