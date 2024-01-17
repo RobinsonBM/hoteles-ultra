@@ -1,7 +1,6 @@
-import '../styles/components/ServicesHotel.scss';
-import { useHotelsContext } from '../context/HotelsProvider';
+import '../../styles/components/ServicesHotel.scss';
 import OwlCarousel from 'react-owl-carousel';
-import { Loader } from './share/Loader';
+import { Loader } from './Loader';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
     faDumbbell,
@@ -13,39 +12,13 @@ import {
     faWifi,
 } from '@fortawesome/free-solid-svg-icons';
 
-export const ServicesHotel = () => {
-    const { services } = useHotelsContext();
-    const optionCarousel = {
-        items: 5,
-        margin: 10,
-        loop: true,
-        autoplay: true,
-        autoplayTimeout: 4000,
-        dots: true,
-        responsive: {
-            1200: {
-                items: 5,
-            },
-            1100: {
-                items: 4,
-            },
-            1000: {
-                items: 3,
-            },
-            800: {
-                items: 2,
-            },
-            768: {
-                items: 1,
-            },
-            520: {
-                items: 5,
-            },
-            200: {
-                items: 4,
-            },
-        },
-    };
+interface ServicesHotelProps {
+    services: string[];
+    options?: object;
+    titulo: string;
+}
+
+export const ServicesHotel: React.FC<ServicesHotelProps> = ({services, options, titulo}) => {
 
     const setIcon = (service: string) => {
         switch (service) {
@@ -68,15 +41,15 @@ export const ServicesHotel = () => {
 
     return (
         <div className='services-hotel container'>
-            <h3>Servicios de tu hotel favorito</h3>
+            <h3>{titulo}</h3>
             {services?.length === 0 ? (
                 <Loader />
             ) : (
-                <OwlCarousel className='owl-theme' {...optionCarousel}>
-                    {services?.map((service) => {
+                <OwlCarousel className='owl-theme' {...options}>
+                    {services?.map((service, index) => {
                         const icon = setIcon(service);
                         return (
-                            <div className='item'>
+                            <div className='item' key={index}>
                                 <div className='icon mb-2'>
                                     <FontAwesomeIcon icon={icon} />
                                 </div>

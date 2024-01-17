@@ -1,5 +1,6 @@
 import { Container, Nav, Navbar } from 'react-bootstrap';
 import { NavLink } from 'react-router-dom';
+import logo from '../../public/hotel.svg'
 import '../styles/components/NavbarMenu.scss';
 
 export const NavbarMenu = () => {
@@ -7,13 +8,13 @@ export const NavbarMenu = () => {
         <Navbar collapseOnSelect expand='lg'>
             <Container>
                 <Navbar.Brand href='/'>
-                    <img src='../../public/hotel.svg' alt='Icono Hoteles Ultra' />
+                    <img src={logo} alt='Icono Hoteles Ultra' />
                     <h1>Hoteles Ultra</h1>
                 </Navbar.Brand>
                 <Navbar.Toggle aria-controls='responsive-navbar-nav' />
                 <Navbar.Collapse id='responsive-navbar-nav'>
                     <Nav className='me-auto'>
-                        <Nav.Link href='#hoteles'>Hoteles</Nav.Link>
+                        <NavLink className='nav-link' to='/hoteles'>Hoteles</NavLink>
                         <Nav.Link href='#habitaciones'>Habitaciones</Nav.Link>
                     </Nav>
                     <NavLink to='/admin' className='login'>

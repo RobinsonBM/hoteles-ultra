@@ -19,6 +19,7 @@ export interface Calificaciones {
 export interface Comentario {
     usuario: string;
     comentario: string;
+    fecha: string
 }
 
 export interface Habitacion {
