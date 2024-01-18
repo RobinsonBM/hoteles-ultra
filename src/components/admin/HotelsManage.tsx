@@ -6,10 +6,11 @@ import {
   TableBody,
   TableRow,
   TableCell,
-  getKeyValue,
 } from "@nextui-org/react";
 import { useHotelsContext } from "../../context/HotelsProvider";
 import { HotelModel } from "../../types";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faEdit, faTrash } from "@fortawesome/free-solid-svg-icons";
 
 const columns = [
   {
@@ -18,11 +19,11 @@ const columns = [
   },
   {
     key: "destiny",
-    label: "Acciones",
+    label: "Destino",
   },
   {
     key: "email",
-    label: "Acciones",
+    label: "Correo Electronico",
   },
   {
     key: "telephone",
@@ -52,12 +53,18 @@ export const HotelsManage = () => {
         <TableBody items={hotels}>
           {(item: HotelModel) => (
             <TableRow key={item.id}>
-              {(columnKey) => (
-                <>
-                  <TableCell>{getKeyValue(item, columnKey)}</TableCell>
-                  <TableCell>{item.id}</TableCell>
-                </>
-              )}
+              <TableCell>{item.name}</TableCell>
+              <TableCell>{item.destiny}</TableCell>
+              <TableCell>{item.email}</TableCell>
+              <TableCell>{item.telephone}</TableCell>
+              <TableCell>
+                <FontAwesomeIcon icon={faEdit} className='icon-action' onClick={() => console.log('Edit'+ item.id)} />
+                <FontAwesomeIcon icon={faTrash} className='icon-action' onClick={() => console.log('Delete'+ item.id)} />
+              </TableCell>
+
+              {/* {(columnKey) => (
+                <TableCell>{getKeyValue(item, columnKey)}</TableCell>
+              )} */}
             </TableRow>
           )}
         </TableBody>
