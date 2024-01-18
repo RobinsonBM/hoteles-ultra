@@ -1,11 +1,7 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import "../../styles/components/share/HotelComment.scss";
-import { Comentario } from "../../types/HotelModel";
 import { faUser } from "@fortawesome/free-solid-svg-icons/faUser";
-
-interface HotelCommentProps {
-  comment: Comentario;
-}
+import { HotelCommentProps } from "../../types";
 
 export const HotelComment: React.FC<HotelCommentProps> = ({ comment }) => {
   return (

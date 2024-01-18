@@ -1,12 +1,7 @@
-import { IconDefinition } from '@fortawesome/fontawesome-svg-core';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { useNavigate } from 'react-router-dom';
+import { ButtonRedirectProps } from '../../types';
 
-interface ButtonRedirectProps {
-    text: string;
-    url: string;
-    icon?: IconDefinition;
-}
 
 export const ButtonRedirect: React.FC<ButtonRedirectProps> = ({ text, url, icon }) => {
     const navigate = useNavigate();

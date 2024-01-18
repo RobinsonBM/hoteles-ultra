@@ -1,22 +1,13 @@
-import {
-  ReactNode,
-  createContext,
-  useContext,
-  useEffect,
-  useState,
-} from "react";
+import { createContext, useContext, useEffect, useState } from "react";
 import { HotelModel } from "../types/HotelModel";
-
-interface HotelsProviderProps {
-  children: ReactNode;
-}
+import { HotelsProviderProps } from "../types";
 
 interface HotelsContextProps {
   hotels?: HotelModel[];
   hotel?: HotelModel;
   services?: string[];
   getHotel?: (id: string) => Promise<HotelModel>;
-  getHotelsByDestiny?: (destiny: string) => Promise<HotelModel[]>
+  getHotelsByDestiny?: (destiny: string) => Promise<HotelModel[]>;
 }
 
 const HotelsContext = createContext<HotelsContextProps>({});
@@ -43,7 +34,7 @@ export const HotelsProvider: React.FC<HotelsProviderProps> = ({ children }) => {
     const data: HotelModel[] = await fetch(`/api/hotels/${destiny}`)
       .then((response) => response.json())
       .then((hotels) => {
-        return hotels
+        return hotels;
       });
     return data;
   };
@@ -69,7 +60,7 @@ export const HotelsProvider: React.FC<HotelsProviderProps> = ({ children }) => {
         hotels,
         services,
         getHotel,
-        getHotelsByDestiny
+        getHotelsByDestiny,
       }}
     >
       {children}

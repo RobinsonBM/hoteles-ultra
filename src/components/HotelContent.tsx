@@ -1,11 +1,8 @@
 import "../styles/components/HotelContent.scss";
-import { HotelModel } from "../types/HotelModel";
+import { HotelContentProps } from "../types";
 import { ServicesHotel } from "./share/ServicesHotel";
 import ReactStars from "react-rating-star-with-type";
 
-interface HotelContentProps {
-  hotel: HotelModel;
-}
 
 export const HotelContent: React.FC<HotelContentProps> = ({ hotel }) => {
   const optionCarousel = {

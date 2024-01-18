@@ -11,12 +11,7 @@ import {
     faTv,
     faWifi,
 } from '@fortawesome/free-solid-svg-icons';
-
-interface ServicesHotelProps {
-    services: string[];
-    options?: object;
-    titulo: string;
-}
+import { ServicesHotelProps } from '../../types';
 
 export const ServicesHotel: React.FC<ServicesHotelProps> = ({services, options, titulo}) => {
 

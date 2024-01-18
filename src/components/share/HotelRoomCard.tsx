@@ -1,9 +1,5 @@
-import { Habitacion } from "../../types/HotelModel";
 import "../../styles/components/share/HotelRoomCard.scss";
-
-interface HotelRoomCardProps {
-  habitacion: Habitacion;
-}
+import { HotelRoomCardProps } from "../../types";
 
 const formatCosto = (valor: number) => {
   const newFormat = new Intl.NumberFormat("es-CO", {

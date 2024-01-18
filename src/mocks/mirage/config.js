@@ -230,7 +230,6 @@ createServer({
     });
 
     this.get("/hotel/:id", (schema, request) => {
-      console.log("🚀 ~ this.get ~ request.params:", request);
       let { id } = request.params;
       return schema.hotels.find(id);
     });

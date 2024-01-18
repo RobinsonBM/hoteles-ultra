@@ -1,12 +1,8 @@
 import '../../styles/components/share/HotelsCard.scss';
 import { Carousel, CarouselProps } from 'react-bootstrap';
-import { HotelModel } from '../../types/HotelModel';
 import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
-
-interface HotelCardProps {
-    data: HotelModel;
-}
+import { HotelCardProps } from '../../types';
 
 export const HotelCard: React.FC<HotelCardProps> = ({ data }) => {
     const [images, setImages] = useState<string[]>([]);

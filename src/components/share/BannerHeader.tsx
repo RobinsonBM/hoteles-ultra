@@ -1,8 +1,6 @@
 import '../../styles/components/share/BannerHeader.scss';
+import { BannerHeaderProps } from '../../types';
 
-interface BannerHeaderProps {
-    img: string;
-}
 
 export const BannerHeader: React.FC<BannerHeaderProps> = ({ img }) => {
     return (

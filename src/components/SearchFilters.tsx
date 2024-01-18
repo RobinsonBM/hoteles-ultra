@@ -15,7 +15,7 @@ export const SearchFilters = () => {
                 <Col md={3} sm={6}>
                     <Filters
                         label={'Ciudad de Destino'}
-                        name={'destino'}
+                        name={'destiny'}
                         placeholder={'Destino'}
                         type={'text'}
                     />
@@ -23,7 +23,7 @@ export const SearchFilters = () => {
                 <Col md={3} sm={6}>
                     <Filters
                         label={'Cantidad de personas'}
-                        name={'huespedes'}
+                        name={'guests'}
                         placeholder={'Huespedes'}
                         type={'range'}
                         min={0}
