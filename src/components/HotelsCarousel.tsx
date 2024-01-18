@@ -55,7 +55,7 @@ export const HotelsCarousel = () => {
                         })}
                     </OwlCarousel>
                     <div className='d-flex justify-content-center'>
-                        <ButtonRedirect text='Ver Mas Hoteles' url='/hoteles' />
+                        <ButtonRedirect text='Ver Mas Hoteles' url='/hotels/search' />
                     </div>
                 </>
             )}
