@@ -2,9 +2,6 @@
 @import 'tailwindcss/base';
 @import 'tailwindcss/components';
 @import 'tailwindcss/utilities';
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
 
 body {
     font-family: $font-principal !important;
@@ -21,26 +18,23 @@ h3,
 h4 {
     font-weight: bold !important;
     margin-bottom: 1rem !important;
+    color: $color-900 !important;
 }
 
 h1 {
     font-size: 2.5rem;
-    color: $color-900 !important;
 }
 
 h2 {
-    font-size: 2rem;
-    color: $color-900 !important;
+    font-size: 32px;
 }
 
 h3 {
     font-size: 1.5rem;
-    color: $color-900 !important;
 }
 
 h4 {
     font-size: 1.2rem;
-    color: $color-900 !important;
 }
 
 label {
