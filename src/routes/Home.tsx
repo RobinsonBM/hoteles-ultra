@@ -88,7 +88,7 @@ export const Home = () => {
       <button onClick={handleDelete}>Eliminar</button>
       <button onClick={handleRoomRead}>Habitaciones</button>
       <button onClick={CreateRooms}>Crear room</button> */}
-      <div className="container pb-5">
+      <div className="home container pb-5">
         <SearchFilters />
         <BannerHome />
         <HotelsCarousel />

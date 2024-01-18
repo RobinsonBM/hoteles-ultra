@@ -2,9 +2,6 @@
 @import 'tailwindcss/base';
 @import 'tailwindcss/components';
 @import 'tailwindcss/utilities';
-#root {
-    padding-top: 70px;
-}
 
 body {
     font-family: $font-principal !important;
