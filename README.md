@@ -35,25 +35,27 @@ npm run dev
 La estructura del proyecto está organizada de la siguiente manera:
 
 ```
-hoteles-ultra/
-├── env.d.ts
+hoteles-ultra
+├── dist
+|  ├── assets
+|  ├── hotel.svg
+|  └── index.html
 ├── index.html
-├── package-lock.json
-├── package.json
 ├── postcss.config.js
 ├── public
 |  └── hotel.svg
 ├── README.md
 ├── src
-|  ├── App.tsx
 |  ├── assets
 |  ├── components
+|  ├── context
 |  ├── main.tsx
 |  ├── mocks
 |  ├── routes
 |  ├── styles
 |  ├── types
 |  └── vite-env.d.ts
+├── tailwind.config.js
 ├── tsconfig.json
 ├── tsconfig.node.json
 └── vite.config.ts
@@ -76,6 +78,11 @@ hoteles-ultra/
 
 ### Biliotecas Utilizadas
 
--   [React Router](https://reactrouter.com/en/main): Enrutador para manejar la navegación en aplicaciones React.
+-   [React Router v6](https://reactrouter.com/en/main): Enrutador para manejar la navegación en aplicaciones React.
 -   [Owl Carousel 2](https://owlcarousel2.github.io/OwlCarousel2/): Plugin de carrusel de imágenes para sitios web.
 -   [Font Awesome](https://fontawesome.com/): Biblioteca de iconos para diseño web y aplicaciones.
+-   [NextUI](https://nextui.org/): Framework de diseño React para construir interfaces modernas y escalables.
+
+### Adicionales
+- SASS
+- TypeScript
