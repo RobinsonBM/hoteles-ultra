@@ -2,29 +2,48 @@
 
 .banner-home {
     align-items: center;
-    background-color: $color-400;
+    background: url('../../assets/Best-Urban-Hotels-Wallpaper-@RuarteContract-hoteles-Ritz-Carlton-Kyoto.jpg') center/cover no-repeat fixed;
+    overflow: hidden;
+    position: relative;
     border-radius: 10px;
     display: flex;
     flex-wrap: wrap;
     height: auto;
-    padding: 15px 5px 15px 15px;
     width: 100%;
+
+    .banner-opacity {
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(to right, $opacity, #fff);
+        ;
+        position: absolute;
+        z-index: 1;
+    }
 
     .banner-title {
         margin: 0 auto;
         text-align: center;
-        width: 350px;
+        width: 300px;
+        position: relative;
+        z-index: 2;
 
         h2 {
-            color: white;
+            color: white !important;
         }
     }
 
     .cards {
         display: flex;
+        flex-wrap: wrap;
         height: 100%;
         justify-content: space-between;
-        margin: 0 auto;
-        width: 600px;
+        margin: 10px auto;
+        width: 700px;
+        position: relative;
+        z-index: 2;
+
+        @media (max-width: 780px) {
+            justify-content: center;
+        }
     }
 }

@@ -1,0 +1,63 @@
+@import "../variables";
+
+.hotel-content {
+  display: flex;
+  justify-content: space-between;
+
+  .main-content {
+    .title {
+      display: flex;
+      align-items: flex-end;
+    }
+
+    .services-hotel {
+      padding-left: 0;
+    }
+
+    .address {
+      font-size: 13px;
+    }
+
+    .rate {
+      .rate-number {
+        background-color: $color-500;
+        border-radius: 5px;
+        border: 1px solid $color-500;
+        box-shadow: 3px 3px 10px 0px $color-100;
+        color: white;
+        margin: 0 5px;
+        padding: 0 5px;
+        text-align: center;
+        width: auto;
+      }
+    }
+  }
+  .hotel-img {
+    width: 60%;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    grid-gap: 16px;
+
+    img {
+      width: 100%;
+      height: 200px;
+      border-radius: 8px;
+      object-fit: cover;
+    }
+  }
+
+  @media (max-width: 980px) {
+    flex-direction: column;
+
+    .main-content {
+      .services-hotel {
+        margin-top: 15px;
+      }
+    }
+
+    .hotel-img {
+      width: 100%;
+      margin-bottom: 15px;
+    }
+  }
+}

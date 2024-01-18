@@ -1,26 +1,68 @@
-import App from './App.tsx';
 import './mocks/mirage/config.js';
 import './styles/index.scss';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import 'owl.carousel/dist/assets/owl.carousel.css';
+import 'owl.carousel/dist/assets/owl.theme.default.css';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import { ChooseUsernameView } from './routes/ChooseUsernameView.tsx';
-import { EditProfileView } from './routes/EditProfileView.tsx';
+import { Footer } from './components/Footer.tsx';
+import { Home } from './routes/Home.tsx';
+import { HotelsProvider } from './context/HotelsProvider.tsx';
+import { HotelsView } from './routes/HotelsView.tsx';
 import { Login } from './routes/Login.tsx';
-import { Logout } from './routes/Logout.tsx';
-import { ProfileView } from './routes/ProfileView.tsx';
+import { NavbarMenu } from './components/NavbarMenu.tsx';
+import { NextUIProvider } from '@nextui-org/react';
 import { RoutesDashboard } from './routes/RoutesDashboard.tsx';
 import ReactDOM from 'react-dom/client';
+import { HotelView } from './routes/HotelView.tsx';
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
     <BrowserRouter>
-        <Routes>
-            <Route path='/' element={<App />} />
-            <Route path='admin' element={<Login />} />
-            <Route path='dashboard' element={<RoutesDashboard />} />
-            <Route path='dashboard/profile' element={<EditProfileView />} />
-            <Route path='logout' element={<Logout />} />
-            <Route path='profile/:username' element={<ProfileView />} />
-            <Route path='choose-username' element={<ChooseUsernameView />} />
-        </Routes>
+        <HotelsProvider>
+            <NextUIProvider>
+                <Routes>
+                    <Route
+                        path='/'
+                        element={
+                            <>
+                                <NavbarMenu />
+                                <Home />
+                                <Footer />
+                            </>
+                        }
+                    />
+                    <Route
+                        path='hoteles'
+                        element={
+                            <>
+                                <NavbarMenu />
+                                <HotelsView />
+                                <Footer />
+                            </>
+                        }
+                    />
+                    <Route
+                        path='hoteles/:destiny'
+                        element={
+                            <>
+                                <NavbarMenu />
+                                <HotelsView />
+                                <Footer />
+                            </>
+                        }
+                    />
+                    <Route 
+                        path='hotel/:id' 
+                        element={
+                            <>
+                                <NavbarMenu />
+                                <HotelView />
+                                <Footer />
+                            </>
+                        } />
+                    <Route path='admin' element={<Login />} />
+                    <Route path='dashboard/*' element={<RoutesDashboard />} />
+                </Routes>
+            </NextUIProvider>
+        </HotelsProvider>
     </BrowserRouter>
 );

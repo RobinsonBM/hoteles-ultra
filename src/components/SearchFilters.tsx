@@ -4,7 +4,7 @@ import { Filters } from './share/Filters';
 export const SearchFilters = () => {
     return (
         <>
-            <h2 className='mt-4'>¿A donde vas?</h2>
+            <h2 className='mt-4 text-center'>¿Buscas un Hotel?</h2>
             <Row>
                 <Col md={3} sm={6}>
                     <Filters label={'Fecha de Entrada'} name={'startDate'} type={'date'} />
@@ -15,7 +15,7 @@ export const SearchFilters = () => {
                 <Col md={3} sm={6}>
                     <Filters
                         label={'Ciudad de Destino'}
-                        name={'destino'}
+                        name={'destiny'}
                         placeholder={'Destino'}
                         type={'text'}
                     />
@@ -23,7 +23,7 @@ export const SearchFilters = () => {
                 <Col md={3} sm={6}>
                     <Filters
                         label={'Cantidad de personas'}
-                        name={'huespedes'}
+                        name={'guests'}
                         placeholder={'Huespedes'}
                         type={'range'}
                         min={0}
@@ -31,6 +31,9 @@ export const SearchFilters = () => {
                     />
                 </Col>
             </Row>
+            <div className='search-home'>
+                <button className='btn btn-secondary mt-3'>Buscar</button>
+            </div>
         </>
     );
 };

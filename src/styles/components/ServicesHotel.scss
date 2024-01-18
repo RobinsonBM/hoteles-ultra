@@ -1,0 +1,44 @@
+@import '../variables';
+
+.services-hotel {
+    padding-left: 450px;
+    margin-top: 1.5rem;
+    margin-bottom: 1.5rem;
+
+    .owl-theme {
+        .item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+
+            .icon {
+                width: 70px;
+                height: 70px;
+                border: 1px solid $color-300;
+                border-radius: 100px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                cursor: pointer;
+
+                svg {
+                    color: $color-700 ;
+                    height: 30px;
+                }
+
+                &:hover {
+                    background-color: $color-100;
+
+                    svg {
+                        transform: scale(1.1);
+                    }
+                }
+            }
+        }
+    }
+
+    @media (max-width: 768px) {
+        margin-top: 200px;
+        padding-left: 12px;
+    }
+}
