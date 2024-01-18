@@ -14,7 +14,7 @@ export const NavbarMenu = () => {
                 <Navbar.Toggle aria-controls='responsive-navbar-nav' />
                 <Navbar.Collapse id='responsive-navbar-nav'>
                     <Nav className='me-auto'>
-                        <NavLink className='nav-link' to='/hoteles'>Hoteles</NavLink>
+                        <NavLink className='nav-link' to='/hotels/search'>Hoteles</NavLink>
                         <Nav.Link href='#habitaciones'>Habitaciones</Nav.Link>
                     </Nav>
                     <NavLink to='/admin' className='login'>

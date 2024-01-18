@@ -1,21 +1,7 @@
-import { useState } from 'react';
-import { FiltersModel, FiltersProps } from '../../types';
+import { FiltersProps } from '../../types';
 
 
-export const Filters: React.FC<FiltersProps> = ({ label, type, name, placeholder, min, max }) => {
-    const [guests, setGuests] = useState(min);
-    const [filters, setFilters] = useState<FiltersModel>({})
-
-    const handleNumber = ({ target }: any) => {
-        const { value } = target;
-        setGuests(value);
-    };
-    
-    const handleValue = ({ target }: any) => {
-        const { value } = target;
-        console.log("🚀 ~ handleValue ~ value:", value)
-        
-    };
+export const Filters: React.FC<FiltersProps> = ({ label, type, name, placeholder, min, max, handleNumber, handleValue, filters }) => {
 
     return (
         <div>
@@ -30,10 +16,10 @@ export const Filters: React.FC<FiltersProps> = ({ label, type, name, placeholder
                     min={min}
                     max={max}
                     required
-                    value={type === 'range' ? guests : undefined}
+                    value={type === 'range' ? filters.guests : undefined}
                     onChange={type === 'range' ? handleNumber : handleValue}
                 />
-                {type === 'range' && <span className='ms-2'>{guests}</span>}
+                {type === 'range' && <span className='ms-2'>{filters.guests}</span>}
             </div>
         </div>
     );

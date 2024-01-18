@@ -13,9 +13,9 @@ import { useParams } from "react-router-dom";
 import { HotelModel } from "../types/HotelModel";
 
 export const HotelsView = () => {
-  const { hotels, services, getHotelsByDestiny } = useHotelsContext();
+  const { hotels, services, getHotelsByFilters } = useHotelsContext();
   const [hotelsFilter, setHotelsFilter] = useState<HotelModel[]>([]);
-  const { destiny } = useParams();
+  const params = useParams();
   const optionCarousel = {
     items: 5,
     margin: 10,
@@ -49,11 +49,11 @@ export const HotelsView = () => {
   };
 
   useEffect(() => {
-    if (destiny) getHotelsFilter();
-  }, [destiny]);
+    if (Object.keys(params).length > 0) getHotelsFilter();
+  }, [params]);
 
   const getHotelsFilter = async () => {
-    const hotels = await getHotelsByDestiny!(destiny!);
+    const hotels = await getHotelsByFilters!(params!);
     setHotelsFilter(hotels);
   };
 
@@ -72,10 +72,10 @@ export const HotelsView = () => {
         <Loader />
       ) : (
         <div className="container">
-          {!destiny ? <h4>¿Estás buscando el lugar ideal para tu estadía?</h4> : <h4>¿Estás buscando el lugar ideal en {destiny}?</h4>}
+          {!params.destiny ? <h4>¿Estás buscando el lugar ideal para tu estadía?</h4> : <h4>¿Estás buscando el lugar ideal en {params.destiny}?</h4>}
           
           <div className="hotels">
-            {!destiny
+            {!params.destiny
               ? hotels?.map((hotel) => {
                   return (
                     <div className="my-3" key={hotel.id}>

@@ -1,5 +1,5 @@
-import { Habitacion } from "..";
+import { Room } from "..";
 
 export interface HotelRoomCardProps {
-    habitacion: Habitacion;
+    habitacion: Room;
   }

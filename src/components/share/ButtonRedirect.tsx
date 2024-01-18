@@ -10,7 +10,7 @@ export const ButtonRedirect: React.FC<ButtonRedirectProps> = ({ text, url, icon 
     };
     return (
         <button
-            className={icon ? 'px-2 btn my-2 text-start' : 'btn my-2'}
+            className={icon ? 'px-2 btn my-2 text-start h-100' : 'btn my-2'}
             onClick={handlerRedirect}>
             {icon ? <FontAwesomeIcon className='me-3' icon={icon} /> : null}
             {text}

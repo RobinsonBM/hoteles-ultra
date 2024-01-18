@@ -31,7 +31,7 @@ export const HotelView = () => {
           <HotelContent hotel={hotel} />
           <h2>Elige tu Habitacion</h2>
           <div className="hotel-room mb-4">
-            {hotel.habitaciones.map((habitacion, index) => {
+            {hotel.rooms.map((habitacion, index) => {
               return (
                 <div key={index}>
                   <HotelRoomCard habitacion={habitacion} />
@@ -41,7 +41,7 @@ export const HotelView = () => {
           </div>
           <h4 id="hotel-comment">Comentarios</h4>
           <div className="comments">
-            {hotel.calificaciones.comentarios.map((comment, index) => {
+            {hotel.rates.comments.map((comment, index) => {
               return (
                 <div key={index}>
                   <HotelComment comment={comment} />
