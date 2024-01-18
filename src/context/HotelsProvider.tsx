@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { createContext, useContext, useEffect, useState } from "react";
 import { HotelModel } from "../types/HotelModel";
 import { HotelsProviderProps } from "../types";
@@ -7,7 +8,7 @@ interface HotelsContextProps {
   hotel?: HotelModel;
   services?: string[];
   getHotel?: (id: string) => Promise<HotelModel>;
-  getHotelsByDestiny?: (destiny: string) => Promise<HotelModel[]>;
+  getHotelsByFilters?: (destiny: any) => Promise<HotelModel[]>;
 }
 
 const HotelsContext = createContext<HotelsContextProps>({});
@@ -30,8 +31,10 @@ export const HotelsProvider: React.FC<HotelsProviderProps> = ({ children }) => {
       });
   };
 
-  const getHotelsByDestiny = async (destiny: string) => {
-    const data: HotelModel[] = await fetch(`/api/hotels/${destiny}`)
+  const getHotelsByFilters = async (params: any) => {
+    const data: HotelModel[] = await fetch(
+      `/api/hotels/search/${params.destiny}`
+    )
       .then((response) => response.json())
       .then((hotels) => {
         return hotels;
@@ -40,7 +43,7 @@ export const HotelsProvider: React.FC<HotelsProviderProps> = ({ children }) => {
   };
 
   const getServices = (hotels: HotelModel[]) => {
-    const servicesSet = new Set(hotels.flatMap((hotel) => hotel.servicios));
+    const servicesSet = new Set(hotels.flatMap((hotel) => hotel.services));
     const services = Array.from(servicesSet).sort();
     setServices(services);
   };
@@ -60,7 +63,7 @@ export const HotelsProvider: React.FC<HotelsProviderProps> = ({ children }) => {
         hotels,
         services,
         getHotel,
-        getHotelsByDestiny,
+        getHotelsByFilters,
       }}
     >
       {children}

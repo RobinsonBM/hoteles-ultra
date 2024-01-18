@@ -6,7 +6,7 @@ import ReactStars from "react-rating-star-with-type";
 
 export const HotelContent: React.FC<HotelContentProps> = ({ hotel }) => {
   const optionCarousel = {
-    items: hotel.servicios.length,
+    items: hotel.services.length,
     margin: 10,
     loop: false,
     autoplay: false,
@@ -29,28 +29,28 @@ export const HotelContent: React.FC<HotelContentProps> = ({ hotel }) => {
     <div className="hotel-content">
       <div className="main-content">
         <div className="title d-flex">
-          <h2 className="m-0">{hotel.nombre}</h2>
-          <p className="m-0 ms-2">Hotel en {hotel.ubicacion}</p>
+          <h2 className="m-0">{hotel.name}</h2>
+          <p className="m-0 ms-2">Hotel en {hotel.destiny}</p>
         </div>
-        <span className="address">{hotel.direccion}</span>
+        <span className="address">{hotel.address}</span>
         <div className="rate d-flex">
-          <ReactStars value={hotel.calificaciones.puntuacion} />
-          <span className="rate-number">{hotel.calificaciones.puntuacion}</span>
+          <ReactStars value={hotel.rates.score} />
+          <span className="rate-number">{hotel.rates.score}</span>
           <span className="rate-context">
-            {ratingStatus(hotel.calificaciones.puntuacion)}
+            {ratingStatus(hotel.rates.score)}
           </span>
         </div>
         <a href="#hotel-comment">
-          ver los {hotel.calificaciones.comentarios.length} comentarios
+          ver los {hotel.rates.comments.length} comentarios
         </a>
         <ServicesHotel
-          services={hotel.servicios}
+          services={hotel.services}
           titulo="Servicios principales"
           options={optionCarousel}
         />
       </div>
       <div className="hotel-img">
-        {hotel.imagenes.map((image, index) => (
+        {hotel.images.map((image, index) => (
           <img key={index} src={image} alt={`Imagen ${index + 1}`} />
         ))}
       </div>

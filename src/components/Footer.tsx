@@ -12,7 +12,7 @@ export const Footer = () => {
     }, [hotels]);
 
     const getDestiny = () => {
-        const destiniesSet = new Set(hotels!.map((hotel) => hotel.ubicacion));
+        const destiniesSet = new Set(hotels!.map((hotel) => hotel.destiny));
         const destinies = Array.from(destiniesSet).sort();
         setDestinies(destinies);
     };
@@ -28,7 +28,7 @@ export const Footer = () => {
                 {destinies.map((destiny, index) => {
                     const destinyFormat = encodeURIComponent(destiny) 
                     return (
-                        <Link key={index} to={`/hoteles/${destinyFormat}`}>
+                        <Link key={index} to={`/hotels/search/${destinyFormat}`}>
                             Hoteles en {destiny}
                         </Link>
                     );

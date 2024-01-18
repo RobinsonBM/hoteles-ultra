@@ -12,10 +12,10 @@ export const HotelComment: React.FC<HotelCommentProps> = ({ comment }) => {
         </div>
       </div>
       <div className="comment-content">
-        <div className="name">{comment.usuario}</div>
-        <div className="date">{comment.fecha}</div>
+        <div className="name">{comment.user}</div>
+        <div className="date">{comment.commentDate}</div>
         <hr className="m-0"></hr>
-        <div className="comment mt-2">{comment.comentario}</div>
+        <div className="comment mt-2">{comment.comment}</div>
       </div>
     </div>
   );

@@ -1,7 +1,7 @@
 @import '../variables';
 
 .sidebar {
-    padding: 20px 0;
+    padding: 20px 0 0 0;
     background-color: $color-300;
     height: 100vh;
     width: 20%;
@@ -13,6 +13,7 @@
         background-color: transparent;
         color: white;
         border: none;
+        border-radius: 0;
         font-size: 1.1rem;
         transition: background-color 0.3s, color 0.3s;
         margin: 0px;
@@ -21,6 +22,7 @@
             background-color: $color-500;
             color: #fff;
             width: 100%;
+            border-radius: 0;
         }
     }
 }

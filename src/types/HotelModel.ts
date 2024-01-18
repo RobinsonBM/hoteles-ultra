@@ -1,40 +1,40 @@
 export interface HotelModel {
     id: number;
-    nombre: string;
-    direccion: string;
-    ubicacion: string;
-    telefono: string;
-    correoElectronico: string;
-    imagenes: string[];
-    habitaciones: Habitacion[];
-    servicios: string[];
-    calificaciones: Calificaciones;
+    name: string;
+    address: string;
+    destiny: string;
+    telephone: string;
+    email: string;
+    images: string[];
+    rooms: Room[];
+    services: string[];
+    rates: Rates;
 }
 
-export interface Calificaciones {
-    puntuacion: number;
-    comentarios: Comentario[];
+export interface Rates {
+    score: number;
+    comments: Comment[];
 }
 
-export interface Comentario {
-    usuario: string;
-    comentario: string;
-    fecha: string
+export interface Comment {
+    user: string;
+    comment: string;
+    commentDate: string
 }
 
-export interface Habitacion {
-    tipo: string;
-    descripcion: string;
-    costoBase: number;
-    impuestos: number;
-    disponibilidad: boolean;
-    ultimaReserva: UltimaReserva;
+export interface Room {
+    type: string;
+    description: string;
+    roomBaseCost: number;
+    tax: number;
+    available: boolean;
+    lastReservation: LastReservation;
     img: string;
 }
 
-export interface UltimaReserva {
-    usuario: string;
-    fechaEntrada: Date;
-    fechaSalida: Date;
-    numNoches: number;
+export interface LastReservation {
+    user: string;
+    startDate: Date;
+    endDate: Date;
+    nights: number;
 }

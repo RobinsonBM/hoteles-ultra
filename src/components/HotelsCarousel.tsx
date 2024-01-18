@@ -35,7 +35,7 @@ export const HotelsCarousel = () => {
     }, [hotels]);
 
     const getBestHotels = () => {
-        const bestHotels = hotels!.filter((hotel) => hotel.calificaciones.puntuacion >= 4.5);
+        const bestHotels = hotels!.filter((hotel) => hotel.rates.score >= 4.5);
         setBestHotels(bestHotels);
     };
     return (

@@ -14,7 +14,7 @@ export const HotelCard: React.FC<HotelCardProps> = ({ data }) => {
 
     useEffect(() => {
         if (DataTransferItemList) {
-            const images = data.imagenes.map((imgHotel) => imgHotel);
+            const images = data.images.map((imgHotel) => imgHotel);
             setImages(images);
         }
     }, [data]);
@@ -33,20 +33,20 @@ export const HotelCard: React.FC<HotelCardProps> = ({ data }) => {
             <Link to={`/hotel/${data.id}`}>
             <div className='hotel-content'>
                 <div className='hotel-rate mt-1 d-flex justify-content-between'>
-                    <strong>{data.calificaciones.puntuacion} de 5</strong>
-                    <p>({data.calificaciones.comentarios.length} Comentarios)</p>
+                    <strong>{data.rates.score} de 5</strong>
+                    <p>({data.rates.comments.length} Comentarios)</p>
                 </div>
                 <div className='hotel-name'>
-                    <h4>{data.nombre}</h4>
-                    <p>{data.ubicacion}</p>
+                    <h4>{data.name}</h4>
+                    <p>{data.destiny}</p>
                 </div>
                 <div className='hotel-others'>
-                    <p>{data.direccion}</p>
-                    <p>{data.telefono}</p>
-                    <p>{data.correoElectronico}</p>
+                    <p>{data.address}</p>
+                    <p>{data.telephone}</p>
+                    <p>{data.email}</p>
                     <p>
                         <strong>Servicios: </strong>
-                        {data.servicios.join(', ')}
+                        {data.services.join(', ')}
                     </p>
                 </div>
             </div>

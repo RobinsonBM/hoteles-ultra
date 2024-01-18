@@ -1,5 +1,5 @@
-import { Comentario } from "..";
+import { Comment } from "..";
 
 export interface HotelCommentProps {
-    comment: Comentario;
+    comment: Comment;
   }

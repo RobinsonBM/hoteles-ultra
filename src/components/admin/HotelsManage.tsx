@@ -1,5 +1,5 @@
 import '../../styles/components/admin/HotelsManage.scss';
-import { Table, TableHeader, TableColumn, TableBody, TableRow, TableCell } from '@nextui-org/react';
+import {Table, TableHeader, TableColumn, TableBody, TableRow, TableCell} from "@nextui-org/react";
 
 const columns = [
     {
@@ -14,7 +14,7 @@ const columns = [
 
 export const HotelsManage = () => {
     return (
-        <div className='hotels-manage'>
+      <div className='hotels-manage'>
             <div className=' header-manage d-flex justify-content-between align-items-center'>
                 <h3>Gestionar Hoteles</h3>
                 <button className='btn btn-secondary'>Nuevo Hotel</button>

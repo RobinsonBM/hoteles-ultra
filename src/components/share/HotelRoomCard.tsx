@@ -16,28 +16,28 @@ export const HotelRoomCard: React.FC<HotelRoomCardProps> = ({ habitacion }) => {
       <div className="room-img">
         <img
           src={habitacion.img}
-          alt={`Imagen habitacion ${habitacion.tipo}`}
+          alt={`Imagen habitacion ${habitacion.type}`}
         />
       </div>
       <div className="room-content">
         <div className="type-room">
-          <span className="room-desc">{habitacion.descripcion}</span>
-          <span className="room-type">{habitacion.tipo}</span>
+          <span className="room-desc">{habitacion.description}</span>
+          <span className="room-type">{habitacion.type}</span>
         </div>
         <span className="room-available">
-          {habitacion.disponibilidad ? "Disponible" : "No disponible"}
+          {habitacion.available ? "Disponible" : "No disponible"}
         </span>
         <div className="room-price">
           <span className="room-base-cost mb-1">
-            {formatCosto(habitacion.costoBase)}
+            {formatCosto(habitacion.roomBaseCost)}
           </span>
           <span className="room-tax">
-            {formatCosto(habitacion.costoBase * habitacion.impuestos)} Impuestos
+            {formatCosto(habitacion.roomBaseCost * habitacion.tax)} Impuestos
             y cargos
           </span>
           <span className="total mb-3">
             {formatCosto(
-              habitacion.costoBase * habitacion.impuestos + habitacion.costoBase
+              habitacion.roomBaseCost * habitacion.tax + habitacion.roomBaseCost
             )}{" "}
             en total
           </span>
