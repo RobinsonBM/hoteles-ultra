@@ -15,7 +15,6 @@ export const NavbarMenu = () => {
                 <Navbar.Collapse id='responsive-navbar-nav'>
                     <Nav className='me-auto'>
                         <NavLink className='nav-link' to='/hotels/search'>Hoteles</NavLink>
-                        <Nav.Link href='#habitaciones'>Habitaciones</Nav.Link>
                     </Nav>
                     <NavLink to='/admin' className='login'>
                         Iniciar Sesion

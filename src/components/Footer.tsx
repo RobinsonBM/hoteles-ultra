@@ -2,6 +2,7 @@ import { Link } from 'react-router-dom';
 import '../styles/components/Footer.scss';
 import { useHotelsContext } from '../context/HotelsProvider';
 import { useEffect, useState } from 'react';
+import logo from '../../public/hotel.svg'
 
 export const Footer = () => {
     const [destinies, setDestinies] = useState<string[]>([]);
@@ -20,7 +21,7 @@ export const Footer = () => {
     return (
         <div className='footer d-flex'>
             <Link className='footer-logotipo my-3' to='/'>
-                <img src='../../public/hotel.svg' alt='Logo del hotel' />
+                <img src={logo} alt='Logo del hotel' />
                 <h1>Hoteles Ultra</h1>
             </Link>
             <div className='footer-menu my-3'>
