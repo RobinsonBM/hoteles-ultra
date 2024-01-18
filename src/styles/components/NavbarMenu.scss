@@ -3,6 +3,10 @@
 .navbar {
     background-color: white !important;
     border-bottom: 1px solid $color-100;
+    position: fixed;
+    z-index: 1000;
+    top: 0;
+    width: 100%;
 
     .container {
         .navbar-brand {
