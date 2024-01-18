@@ -3,6 +3,7 @@ import { useState } from "react";
 import "../../styles/components/share/CardFilter.scss";
 import { Filters } from "./Filters";
 import { FiltersModel } from "../../types";
+import { useNavigate } from "react-router-dom";
 
 export const CardFilter = () => {
   const [filters, setFilters] = useState<FiltersModel>({
@@ -11,6 +12,7 @@ export const CardFilter = () => {
     destiny: "",
     guests: 1,
   });
+  const navigate = useNavigate();
 
   const handleNumber = ({ target }: any) => {
     const { value, name } = target;
@@ -21,46 +23,56 @@ export const CardFilter = () => {
     const { value, name } = target;
     setFilters({ ...filters, [name]: value });
   };
+
+  const searchHotel = (event: any) => {
+    console.log('Entro');
+    
+    event.preventDefault();
+    navigate(`/hotels/search/${filters.destiny}/${filters.startDate}/${filters.endDate}` );
+  };
+
   return (
     <div className="card-filter">
       <h3>¿Buscas un Hotel?</h3>
-      <Filters
-        handleNumber={handleNumber}
-        handleValue={handleValue}
-        filters={filters}
-        label={"Fecha de Entrada"}
-        name={"startDate"}
-        type={"date"}
-      />
-      <Filters
-        handleNumber={handleNumber}
-        handleValue={handleValue}
-        filters={filters}
-        label={"Fecha de Salida"}
-        name={"endDate"}
-        type={"date"}
-      />
-      <Filters
-        handleNumber={handleNumber}
-        handleValue={handleValue}
-        filters={filters}
-        label={"Ciudad de Destino"}
-        name={"destino"}
-        placeholder={"Destino"}
-        type={"text"}
-      />
-      <Filters
-        handleNumber={handleNumber}
-        handleValue={handleValue}
-        filters={filters}
-        label={"Cantidad de personas"}
-        name={"huespedes"}
-        placeholder={"Huespedes"}
-        type={"range"}
-        min={0}
-        max={10}
-      />
-      <button className="btn btn-secondary mt-3">Buscar</button>
+      <form onSubmit={searchHotel}>
+        <Filters
+          handleNumber={handleNumber}
+          handleValue={handleValue}
+          filters={filters}
+          label={"Fecha de Entrada"}
+          name={"startDate"}
+          type={"date"}
+        />
+        <Filters
+          handleNumber={handleNumber}
+          handleValue={handleValue}
+          filters={filters}
+          label={"Fecha de Salida"}
+          name={"endDate"}
+          type={"date"}
+        />
+        <Filters
+          handleNumber={handleNumber}
+          handleValue={handleValue}
+          filters={filters}
+          label={"Ciudad de Destino"}
+          name={"destiny"}
+          placeholder={"Destino"}
+          type={"text"}
+        />
+        <Filters
+          handleNumber={handleNumber}
+          handleValue={handleValue}
+          filters={filters}
+          label={"Cantidad de personas"}
+          name={"guests"}
+          placeholder={"Huespedes"}
+          type={"range"}
+          min={1}
+          max={10}
+        />
+        <button className="btn btn-secondary mt-3" type="submit">Buscar</button>
+      </form>
     </div>
   );
 };
