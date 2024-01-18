@@ -58,7 +58,7 @@ export const HotelsView = () => {
   };
 
   return (
-    <>
+    <div className="hotels-view">
       <BannerHeader img={imageBanner} />
       <div className="container">
         <CardFilter />
@@ -93,6 +93,6 @@ export const HotelsView = () => {
           </div>
         </div>
       )}
-    </>
+    </div>
   );
 };

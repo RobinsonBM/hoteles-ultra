@@ -1,8 +1,11 @@
-@import '../variables';
+@import "../variables";
 
-.hotels {
+.hotels-view {
+  padding-top: 70px;
+  .hotels {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-evenly;
+  }
 }
